@@ -2,15 +2,14 @@
 import { DragDropContext, Draggable, DropResult, Droppable } from '@hello-pangea/dnd';
 import { eachDayOfInterval, endOfWeek, startOfToday, startOfWeek } from 'date-fns';
 
+import { PlusIcon } from '@/components/Icons';
+import { ICalendarData, IDayContainer, IExercise } from '@/types/globals.type';
+import { getRandomItem } from '@/utils/common';
+import { DragTypes, EXERCISES_ARRAY, LIST_SETS, LIST_WORKOUTS_TITLE } from '@/utils/constants';
+import { cloneDeep } from 'lodash';
 import { useState } from 'react';
-import { initialData } from '@/mock/data';
 import DayBlock from './DayBlock';
 import TaskItem from './TaskItem';
-import { DragTypes, EXERCISES_ARRAY, LIST_SETS, LIST_WORKOUTS_TITLE } from '@/utils/constants';
-import { PlusIcon } from '@/components/Icons';
-import { getRandomItem } from '@/utils/common';
-import { cloneDeep } from 'lodash';
-import { ICalendarData, IDayContainer, IExercise } from '@/types/globals.type';
 
 const Content = () => {
   const today = startOfToday();
@@ -21,7 +20,7 @@ const Content = () => {
   });
 
   const [calendarData, setCalendarData] = useState<ICalendarData>({
-    workouts: initialData.tasks,
+    workouts: {},
     columns: days.reduce(
       (result, cur) => ({
         ...result,

@@ -1,9 +1,9 @@
-import { ITaskItemProps, IWorkout, TBlockProps } from '@/types/globals.type';
+import { IWorkout, TBlockProps } from '@/types/globals.type';
+import { cn } from '@/utils/common';
+import { TYPE_EXERCISE } from '@/utils/constants';
 import { Draggable, Droppable } from '@hello-pangea/dnd';
 import React, { forwardRef } from 'react';
-import { TYPE_EXERCISE } from '@/utils/constants';
 import { EllipsisIcon } from '../Icons/ellipsis';
-import { cn } from '@/utils/common';
 
 interface IComponentProps extends TBlockProps {
   isDragging?: boolean;

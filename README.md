@@ -5,7 +5,7 @@
 ### Frontend
 
 - **Next.js 15.2.0** - React framework with App Router
-- **React 19** - UI library
+- **React 19**
 - **TypeScript** - Type-safe JavaScript
 - **TailwindCSS** - Utility-first CSS framework
 - **clsx & tailwind-merge** - For conditional class name management
